@@ -43,6 +43,7 @@ function Board({ cells, onCellClick }: { cells: Cell[]; onCellClick: (cell: Cell
 		<div className="grid grid-rows-3 grid-cols-3  bg-light-200 text-3xl w-fit gap-2">
 			{cells.map(c => (
 				<Cell
+					key={c.id}
 					onClick={cell => {
 						onCellClick(cell);
 					}}
