@@ -66,15 +66,7 @@ function checkWinCondition(cells: Cell[]): GameStatus | null {
 		[3, 5, 7],
 	];
 
-	function cellValue(id: number): CellValue {
-		try {
-			return cells.find(c => c.id == id)!.value;
-		} catch (err) {
-			console.log('CellValue error ', id);
-			console.log(cells);
-			throw err;
-		}
-	}
+	const cellValue = (id: number): CellValue => cells.find(c => c.id === id)!.value;
 
 	for (const slice of winConditions) {
 		const v0 = cellValue(slice[0]);
